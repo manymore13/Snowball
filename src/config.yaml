@@ -1,0 +1,72 @@
+site:
+  name: Houxue Studio
+  site: 'https://snowball.value888.site'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: d270c540e221f668
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Houxue Studio
+    template: '%s — Houxue Studio'
+  description: 'Houxue Studio — Independent software development studio crafting thoughtful mobile experiences.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Houxue Studio
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: ''
+    site: ''
+    cardType: summary_large_image
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 6
+
+    post:
+      isEnabled: false
+      permalink: '/%slug%'
+      robots:
+        index: true
+
+    list:
+      isEnabled: false
+      pathname: 'blog'
+      robots:
+        index: true
+
+    category:
+      isEnabled: false
+      pathname: 'category'
+      robots:
+        index: true
+
+    tag:
+      isEnabled: false
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

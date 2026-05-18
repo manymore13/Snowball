@@ -1,34 +1,75 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Houxue Studio — Independent software development studio crafting thoughtful mobile experiences',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<BaseLayout
-  title="Home"
-  description="Houxue Studio — Independent software development studio crafting thoughtful mobile experiences."
->
-  <section class="max-w-4xl mx-auto px-6 flex-1 flex flex-col justify-center">
-    <div class="max-w-2xl">
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-        Crafting thoughtful<br />mobile experiences
-      </h1>
-      <p class="mt-6 text-lg text-gray-500 leading-relaxed">
-        Houxue Studio is an independent software development studio focused on
-        building high-quality, user-friendly mobile applications.
-      </p>
-      <div class="mt-10 flex gap-4">
-        <a
-          href="/works"
-          class="inline-flex items-center px-5 py-2.5 rounded-lg bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition-colors"
-        >
-          View our work
-        </a>
-        <a
-          href="/about"
-          class="inline-flex items-center px-5 py-2.5 rounded-lg border border-gray-200 text-sm font-medium hover:bg-gray-50 transition-colors"
-        >
-          About us
-        </a>
-      </div>
-    </div>
-  </section>
-</BaseLayout>
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      { variant: 'primary', text: 'View our work', href: '/works', icon: 'tabler:apps' },
+      { text: 'About us', href: '/about' },
+    ]}
+  >
+    <Fragment slot="title">
+      Crafting thoughtful<br />mobile experiences
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="font-semibold">Houxue Studio</span> is an independent software development
+      studio focused on building high-quality, user-friendly mobile applications.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note title="Philosophy:" description="Long slope, thick snow — sustainable, long-term value creation." />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="What we do"
+    subtitle="We focus on delivering polished, reliable mobile apps that serve real user needs."
+    items={[
+      {
+        title: 'Mobile App Development',
+        description:
+          'Building intuitive, high-quality Android applications with a focus on user experience and reliability.',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'Offline-First Design',
+        description:
+          'Creating apps that work seamlessly without internet connectivity, ensuring accessibility anytime, anywhere.',
+        icon: 'tabler:cloud-off',
+      },
+      {
+        title: 'Thoughtful UX',
+        description:
+          'Every detail matters. We craft interfaces that are clean, intuitive, and delightful to use.',
+        icon: 'tabler:sparkles',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Have a project in mind?"
+    subtitle="We'd love to hear from you. Reach out and let's discuss how we can work together."
+    actions={[
+      { variant: 'primary', text: 'Get in touch', href: '/contact' },
+    ]}
+  />
+</Layout>

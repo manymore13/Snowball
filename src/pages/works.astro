@@ -1,61 +1,66 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+
+const metadata = {
+  title: 'Works',
+};
 ---
 
-<BaseLayout
-  title="Works"
-  description="Explore apps and projects built by Houxue Studio."
->
-  <section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
-    <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Works</h1>
-    <p class="mt-4 text-gray-500">Products we've built with care.</p>
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
 
-    <!-- Lukou Chinese -->
-    <div class="mt-12 rounded-xl border border-gray-100 p-6 md:p-8">
-      <h2 class="text-2xl font-semibold">Lukou Chinese</h2>
-      <p class="mt-3 text-gray-500 leading-relaxed max-w-2xl">
-        A fully offline Chinese phrase assistant app designed for foreign
-        tourists visiting China. No internet required — all phrases available
-        at your fingertips anytime, anywhere.
-      </p>
+  <HeroText tagline="Works" title="Products we've built with care." />
 
-      <!-- Screenshots -->
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <img
-          src="/lukou_screen1.png"
-          alt="Lukou Chinese Screenshot 1"
-          class="rounded-lg border border-gray-100 w-full"
-        />
-        <img
-          src="/lukou_screen2.png"
-          alt="Lukou Chinese Screenshot 2"
-          class="rounded-lg border border-gray-100 w-full"
-        />
-        <img
-          src="/lukou_screen3.png"
-          alt="Lukou Chinese Screenshot 3"
-          class="rounded-lg border border-gray-100 w-full"
-        />
-      </div>
+  <!-- Features3 Widget ************** -->
 
-      <div class="mt-6 flex items-center gap-6">
-        <span class="inline-flex items-center text-sm text-gray-400">
-          Coming soon on Google Play
-        </span>
-        <a
-          href="/lukou_privacy_policy.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm text-gray-500 underline underline-offset-2 hover:text-gray-900 transition-colors"
-        >
-          Privacy Policy
-        </a>
-      </div>
+  <Features3
+    title="Our apps"
+    subtitle="Each app is crafted with attention to detail and a focus on real user needs."
+    columns={1}
+    isBeforeContent={true}
+    items={[
+      {
+        title: 'Lukou Chinese',
+        description:
+          'A fully offline Chinese phrase assistant app designed for foreign tourists visiting China. No internet required — all phrases available at your fingertips anytime, anywhere. Coming soon on Google Play.',
+        icon: 'tabler:language',
+      },
+    ]}
+  />
+
+  <!-- Screenshots -->
+  <div class="max-w-6xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <img
+        src="/lukou_screen1.png"
+        alt="Lukou Chinese Screenshot 1"
+        class="rounded-lg border border-gray-200 dark:border-gray-700 w-full"
+      />
+      <img
+        src="/lukou_screen2.png"
+        alt="Lukou Chinese Screenshot 2"
+        class="rounded-lg border border-gray-200 dark:border-gray-700 w-full"
+      />
+      <img
+        src="/lukou_screen3.png"
+        alt="Lukou Chinese Screenshot 3"
+        class="rounded-lg border border-gray-200 dark:border-gray-700 w-full"
+      />
     </div>
-
-    <!-- Future works -->
-    <div class="mt-8 rounded-xl border border-dashed border-gray-200 p-6 text-center">
-      <p class="text-sm text-gray-300">More projects coming soon</p>
+    <div class="mt-6 flex items-center gap-6">
+      <span class="inline-flex items-center text-sm text-gray-400 dark:text-gray-500">
+        Coming soon on Google Play
+      </span>
+      <a
+        href="/lukou_privacy_policy.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-gray-500 underline underline-offset-2 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
+      >
+        Privacy Policy
+      </a>
     </div>
-  </section>
-</BaseLayout>
+  </div>
+</Layout>
