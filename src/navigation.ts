@@ -38,10 +38,10 @@ export const footerData = {
   secondaryLinks: [
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
-  socialLinks: [
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-  ],
+  socialLinks: [],
   footNote: `
     &copy; ${new Date().getFullYear()} Houxue Studio. All rights reserved.
+    <br />
+    Theme by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo/astrowind" target="_blank" rel="noopener noreferrer">AstroWind</a>
   `,
 };
