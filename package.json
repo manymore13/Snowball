@@ -1,7 +1,7 @@
 {
   "name": "snowball-studio",
   "version": "1.0.0",
-  "description": "Snowball Studio official website",
+  "description": "Houxue Studio official website",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
